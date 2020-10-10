@@ -1,0 +1,21 @@
+php_flag display_errors on
+#prendemos una bandera#
+ 
+#Sobre escribir algo y lo encendemos#
+
+RewriteEngine On
+
+#Reglas por si encuentra algo#
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+ 
+#Expresiones regulares terminan con signo pesos#
+
+RewriteRule ^departamentos/([0-9]+)$ controller/departamento.php?idDepto=$1 [L]
+RewriteRule ^ciudades/([0-9]+)$ controller/ciudad.php?idCiudad=$1 [L]
+RewriteRule ^sucursales/([0-9]+)$ controller/sucursal.php?idSucursal=$1 [L]
+RewriteRule ^areas/([0-9]+)$ controller/area.php?idArea=$1 [L]
+RewriteRule ^departamentos$ controller/departamento.php [L]
+RewriteRule ^areas$ controller/area.php [L]
